@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches-ignore:
-      - test-*
+      - main
   workflow_dispatch:
 
 jobs:

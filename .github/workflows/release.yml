@@ -1,0 +1,31 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['16']
+    name: Build using Node v${{ matrix.node-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn
+
+      - name: Build application
+        run: yarn build
+        env:
+          CI: true
+
+      - name: Publish to npm
+        run: yarn release minor --ci 
