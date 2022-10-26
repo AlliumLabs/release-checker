@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AlliumLabs/release-checker/issues"
   },
-  "homepage": "https://github.com/AlliumLabs/release-checker#readme"
+  "homepage": "https://github.com/AlliumLabs/release-checker#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }
