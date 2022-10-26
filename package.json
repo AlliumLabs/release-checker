@@ -1,10 +1,11 @@
 {
-  "name": "release-checker",
+  "name": "release-checker-allium",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf ./dist && tsc",
+    "release": "release-it",
     "test": "echo \"No test specified\""
   },
   "repository": {
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/AlliumLabs/release-checker#readme",
   "devDependencies": {
+    "release-it": "^15.5.0",
     "typescript": "^4.8.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   }
 }
